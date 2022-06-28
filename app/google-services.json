@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "817254759850",
+    "project_id": "openstore-b9d2e",
+    "storage_bucket": "openstore-b9d2e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:817254759850:android:0f49cb90d3af2b3a0effd3",
+        "android_client_info": {
+          "package_name": "com.synerf.openstore"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "817254759850-sor5q38qgcmubgred7e3l5hvj32833hl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.synerf.openstore",
+            "certificate_hash": "2727b4fb2034348f9223f7e2be20616464fb2a8f"
+          }
+        },
+        {
+          "client_id": "817254759850-de4pa41aolj0httj1dugvobvd4e5ul3u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAfwEFEGKxhpfSNniNUImlKy3w75qVZyw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "817254759850-de4pa41aolj0httj1dugvobvd4e5ul3u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
