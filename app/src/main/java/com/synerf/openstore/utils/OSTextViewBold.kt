@@ -6,7 +6,7 @@ import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatTextView
 import java.util.jar.Attributes
 
-class MSPTextViewBold(context: Context, attrs: AttributeSet): AppCompatTextView(context, attrs) {
+class OSTextViewBold(context: Context, attrs: AttributeSet): AppCompatTextView(context, attrs) {
     init {
         // call the function to apply font to the components
         applyFont();

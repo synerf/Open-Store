@@ -8,7 +8,7 @@
     tools:context=".activities.SplashActivity">
 
 <!--    custom textview   -->
-    <com.synerf.openstore.utils.MSPTextViewBold
+    <com.synerf.openstore.utils.OSTextViewBold
         android:id="@+id/tv_app_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
