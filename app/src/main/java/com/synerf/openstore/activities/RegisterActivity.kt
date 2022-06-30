@@ -7,16 +7,16 @@ import android.os.Bundle
 import android.view.WindowInsets
 import android.view.WindowManager
 import com.synerf.openstore.R
-import com.synerf.openstore.databinding.ActivityLoginBinding
+import com.synerf.openstore.databinding.ActivityRegisterBinding
 
-class LoginActivity : AppCompatActivity() {
+class RegisterActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityLoginBinding
+    private lateinit var binding: ActivityRegisterBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityLoginBinding.inflate(layoutInflater)
-        setContentView(binding .root)
+        binding = ActivityRegisterBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
 
         // to hide status bar
@@ -30,9 +30,9 @@ class LoginActivity : AppCompatActivity() {
             )
         }
 
-        // when clicked on register, go to register activity
-        binding.tvRegister.setOnClickListener {
-            val intent = Intent(this@LoginActivity, RegisterActivity::class.java)
+        // when clicked on login, go to login activity
+        binding.tvLogin.setOnClickListener {
+            val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
             startActivity(intent)
         }
     }
