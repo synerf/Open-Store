@@ -14,7 +14,7 @@ class OSEditText(context: Context, attributeSet: AttributeSet): AppCompatEditTex
     // function to apply font
     private fun applyFont() {
         // get font file from asset folder and set it to the title textview
-        val typeFace: Typeface = Typeface.createFromAsset(context.assets, "Montserrat-Bold.ttf")
+        val typeFace: Typeface = Typeface.createFromAsset(context.assets, "Montserrat-Regular.ttf")
 
         setTypeface(typeFace)
     }
