@@ -7,6 +7,8 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.view.WindowInsets
 import android.view.WindowManager
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.synerf.openstore.R
 import com.synerf.openstore.databinding.ActivityRegisterBinding
 
@@ -42,7 +44,7 @@ class RegisterActivity : BaseActivity() {
 
         // when clicked on Register button
         binding.btnRegister.setOnClickListener {
-            validateRegisterDetails()
+            registerUser()
         }
     }
 
@@ -97,10 +99,45 @@ class RegisterActivity : BaseActivity() {
                 false
             }
             else -> {
-                showErrorSnackBar(resources.getString(R.string.register_success), false)
+//                showErrorSnackBar(resources.getString(R.string.register_success), false)
                 true
             }
         }
+    }
+
+    /**
+     * function to register user
+     */
+    private fun registerUser() {
+        // check if inout is valid
+        if (validateRegisterDetails()) {
+            // show progress dialog
+            showProgressDialog(resources.getString(R.string.please_wait))
+
+            // get values from editText
+            val email: String = binding.etEmail.text.toString().trim { it <= ' ' }
+            val password: String = binding.etPassword.text.toString().trim { it <= ' ' }
+
+            // create user with email and password
+            FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener { task ->
+                    // hide progress dialog
+                    hideProgressDialog()
+
+                    // if user is registered successfully
+                    if (task.isSuccessful) {
+                        // firebase registered user
+                        val firebaseUser: FirebaseUser = task.result!!.user!!
+
+                        showErrorSnackBar("You are registered successfully. Your user id is ${firebaseUser.uid}",
+                            false)
+
+                    } else {
+                        // if registering is not successful
+                        showErrorSnackBar(task.exception!!.message.toString(), false)
+                    }
+                }
+            }
     }
 
 }
